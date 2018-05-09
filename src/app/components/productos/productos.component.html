@@ -1,13 +1,14 @@
 <h1>Productos <small>Marvel y DC</small></h1>
 <hr>
 <div class="card-columns">
-    <div class="card" *ngFor="let producto of Productos">
+    <div class="card" *ngFor="let producto of Productos; let i = index;">
         <img class="card-img-top" [src]="producto.img" [alt]="producto.nombre">
         <div class="card-body">
-            <h5 class="card-title">{{producto.nombre}}</h5>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            <button class="btn btn-primary btn-block">Mas Información</button>
+            <h5 class="card-title">{{ producto.nombre }}</h5>
+            <p class="card-text">{{ producto.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{ producto.aparicion }}</small></p>
+            <button (click)="verProducto(i)" class="btn btn-primary btn-block">Mas Información</button>
+            <!-- <a [routerLink]="['/producto', i]" class="btn btn-primary btn-block">Más Información</a> -->
         </div>
     </div>
 </div>
