@@ -14,6 +14,7 @@ import { AboutComponent } from './components/about/about.component';
 import { ProductosComponent } from './components/productos/productos.component';
 import { ProductosService } from './services/productos.services';
 import { ProductoComponent } from './components/producto/producto.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductoComponent } from './components/producto/producto.component';
     HomeComponent,
     AboutComponent,
     ProductosComponent,
-    ProductoComponent
+    ProductoComponent,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,

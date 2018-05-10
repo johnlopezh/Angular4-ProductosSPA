@@ -10,7 +10,7 @@ export class ProductosService {
           img: 'assets/img/aquaman.png',
           aparicion: '1941-11-01',
           casa:'iOS'
-        }
+        },
         {
           nombre: 'Batman',
           bio: 'Los rasgos principales de Batman se resumen en «destreza física, habilidades deductivas y obsesión». La mayor parte de las características básicas de los cómics han variado por las diferentes interpretaciones que le han dado al personaje.',
@@ -62,6 +62,20 @@ export class ProductosService {
     }
     getProducto(idx: string) {
       return this.Productos[idx];
+    }
+    buscarPersona ( termino: string ) {
+
+      let productosArr: Producto[] = [];
+      termino = termino.toLowerCase();
+
+      for ( let producto of this.Productos) {
+           let nombre = producto.nombre.toLowerCase();
+           if ( nombre.indexOf ( termino ) >= 0 ) {
+             productosArr.push( producto );
+           }
+      }
+      return productosArr;
+
     }
 }
 
